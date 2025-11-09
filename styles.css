@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.game-info {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #555;
+    font-weight: bold;
+}
+
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+    border: 3px solid #333;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.square.light {
+    background-color: #f0d9b5;
+}
+
+.square.dark {
+    background-color: #b58863;
+}
+
+.square.selected {
+    background-color: #ffff00 !important;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.square.valid-move {
+    background-color: #90EE90 !important;
+}
+
+.square.valid-move::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 128, 0, 0.5);
+    border-radius: 50%;
+}
+
+.square:hover {
+    opacity: 0.8;
+}
+
+.piece {
+    font-size: 60px;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+}
+
+.reset-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 16px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background 0.3s;
+}
+
+.reset-btn:hover {
+    background: #764ba2;
+}
+
+.status {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #666;
+    min-height: 24px;
+}
